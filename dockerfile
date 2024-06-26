@@ -17,4 +17,4 @@ EXPOSE 5000
 ENV GOOGLE_API_KEY AIzaSyBFAbmCIzEQZ7T9ga0olkL1c95ViIQAPAE
 
 # Run app.py when the container launches
-CMD ["python", "app.py"]
+CMD ["gunicorn",  "--bind", "0.0.0.0:5000", "run:wsgi" ]
